@@ -67,7 +67,42 @@ namespace prac1_lab_cjjosmer.Controllers
                     model.Mensaje = "Conversión realizada.";
                 }
             }
-            return View(model);
+            return RedirectToAction("Boleta", new 
+             { 
+             cantidadOrigen = model.CantidadOrigen, 
+            monedaOrigen = model.MonedaOrigen, 
+            monedaDestino = model.MonedaDestino, 
+            resultado = model.Resultado 
+            });
         }
+
+      
+        public IActionResult Boleta(decimal cantidadOrigen, string monedaOrigen, string monedaDestino, decimal resultado)
+        {
+        
+        var model = new BoletaViewModel
+        {
+            CantidadOrigen = cantidadOrigen,
+            MonedaOrigen = monedaOrigen,
+            MonedaDestino = monedaDestino,
+            Resultado = resultado
+        };
+        return View(model);
+        }
+
+
+        [HttpPost]
+        public IActionResult Boleta(BoletaViewModel model)
+        {
+            if (ModelState.IsValid)
+                {
+        
+            return View("BoletaGenerada", model);
+                }       
+        return View(model);
+        }
+
+
+        
     }
 }

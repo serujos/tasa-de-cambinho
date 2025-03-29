@@ -1,0 +1,56 @@
+@model prac1_lab_cjjosmer.Models.BoletaViewModel
+
+@{
+    ViewData["Title"] = "Datos para Boleta";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Boleta" method="post">
+    <div class="form-group">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Apellido"></label>
+        <input asp-for="Apellido" class="form-control" />
+        <span asp-validation-for="Apellido" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DNI"></label>
+        <input asp-for="DNI" class="form-control" />
+        <span asp-validation-for="DNI" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Numero">Número de teléfono</label>
+        <input asp-for="Numero" class="form-control" />
+        <span asp-validation-for="Numero" class="text-danger"></span>
+    </div>
+
+    <input asp-for="CantidadOrigen" type="hidden" />
+    <input asp-for="MonedaOrigen" type="hidden" />
+    <input asp-for="MonedaDestino" type="hidden" />
+    <input asp-for="Resultado" type="hidden" />
+
+    <hr />
+    <h4>Resumen de la Conversión</h4>
+    <p>Cantidad a Enviar: @Model.CantidadOrigen</p>
+    <p>De: @Model.MonedaOrigen - A: @Model.MonedaDestino</p>
+    <p>Resultado: @Model.Resultado</p>
+    
+    <button type="submit" class="btn btn-primary">Generar Boleta</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Mensaje))
+{
+    <div class="alert alert-info mt-3">
+        @Model.Mensaje
+    </div>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

@@ -1,0 +1,20 @@
+@model prac1_lab_cjjosmer.Models.BoletaViewModel
+
+@{
+    ViewData["Title"] = "Boleta Generada";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="card p-3">
+    <h4>Datos del Cliente</h4>
+    <p><strong>Nombre:</strong> @Model.Nombre @Model.Apellido</p>
+    <p><strong>DNI:</strong> @Model.DNI</p>
+    <p><strong>Número:</strong> @Model.Numero</p>
+
+    <h4>Monto Final</h4>
+    <p><strong>Resultado:</strong> @Model.Resultado</p>
+</div>
+
+<a asp-controller="Cambio" asp-action="Index" class="btn btn-primary">Volver</a>
+
