@@ -1,0 +1,52 @@
+﻿@model prac1_lab_cjjosmer.Models.CambioViewModel
+
+@{
+    ViewData["Title"] = "Conversor de Monedas";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Index" method="post">
+    <div class="form-group">
+        <label for="CantidadOrigen">Cantidad a Enviar</label>
+        <input asp-for="CantidadOrigen" class="form-control" />
+        <span asp-validation-for="CantidadOrigen" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="MonedaOrigen">Moneda Origen</label>
+        <select asp-for="MonedaOrigen" class="form-control">
+            <option value="">Seleccione</option>
+            <option value="BRL">Real Brasileño (BRL)</option>
+            <option value="USD">Dólar (USD)</option>
+            <option value="PEN">Sol Peruano (PEN)</option>
+        </select>
+        <span asp-validation-for="MonedaOrigen" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="MonedaDestino">Moneda Destino</label>
+        <select asp-for="MonedaDestino" class="form-control">
+            <option value="">Seleccione</option>
+            <option value="BRL">Real Brasileño (BRL)</option>
+            <option value="USD">Dólar (USD)</option>
+            <option value="PEN">Sol Peruano (PEN)</option>
+        </select>
+        <span asp-validation-for="MonedaDestino" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Cambiar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Mensaje))
+{
+    <div class="alert alert-info mt-3">
+        @Model.Mensaje <br />
+        @if(Model.Resultado != 0)
+        {
+            <p>Resultado: @Model.Resultado</p>
+
+        }
+    </div>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
