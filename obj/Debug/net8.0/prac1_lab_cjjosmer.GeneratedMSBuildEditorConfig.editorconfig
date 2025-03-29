@@ -18,12 +18,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\jos\Desktop\prac1_lab_cjjosmer
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/jos/Desktop/prac1_lab_cjjosmer/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/jos/Desktop/prac1_lab_cjjosmer/Views/Cambio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtYmlvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jos/Desktop/prac1_lab_cjjosmer/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/jos/Desktop/prac1_lab_cjjosmer/Views/Cambio/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtYmlvXFByaXZhY3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/jos/Desktop/prac1_lab_cjjosmer/Views/Shared/Error.cshtml]
